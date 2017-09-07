@@ -3,6 +3,9 @@
    <h1><%= p.name %></h1> <br />
    <i> <%= p.address %></i> <br /> <br/>
    <p> <%= p.description %> </p> <br />
+     <% if p.user.present? %>
+      <small><%= p.user.email %></small>
+    <% end %>
 </div>
 
 <% end %>
