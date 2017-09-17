@@ -11,7 +11,7 @@ class PlacesController < ApplicationController
     
     def create
         @place= current_user.places.create(place_params) # what is place_params. I dont understand create
-         if @place.valid?
+        if @place.valid?
              redirect_to root_path
         else 
             render :new, status: :unprocessable_entity
