@@ -54,7 +54,7 @@
   <div class="clear"></div>
   <%= simple_form_for @comment , url: place_comments_path(@place) do |form| %>
   <%= form.input :message %>
-  <%= form.input :rating %>
+  <%= form.input :rating, as: :select, collection: Comment::RATINGS %>
   <%= form.submit "Add a comment" , class: 'btn btn-primary' %>
   <% end %>
   
@@ -63,7 +63,9 @@
   <% @place.comments.each do |c| %>
    <div>
     <blockquote>
-  <b><%= c.rating %></b>
+    <% if c.humanized_rating.present? %>
+  <b><%= c.humanized_rating %></b>
+  <% end %>
   <%= c.message %>
   <small><%= c.user.email %></small>
   </bockquote>
