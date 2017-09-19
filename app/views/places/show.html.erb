@@ -14,7 +14,6 @@
   </style>
   </head>
   <body>
-  <div id="map"></div>
   
   <% if @place.latitude.present? && @place.longitude.present? %>
   <script>
@@ -53,9 +52,21 @@
   </div>
   
   <div class="clear"></div>
-  <%= simple_form_for @comment , url: place_comments_path (@place) do |form| %>
+  <%= simple_form_for @comment , url: place_comments_path(@place) do |form| %>
   <%= form.input :message %>
   <%= form.input :rating %>
   <%= form.submit "Add a comment" , class: 'btn btn-primary' %>
+  <% end %>
+  
+  
+  <h1>Comments </h1>
+  <% @place.comment.each do |c| %>
+   <div>
+    <blockquote>
+  <b><%= c.rating %></b>
+  <%= c.message %>
+  <small><%= c.user.email %></small>
+  </bockquote>
+  </div>
   <% end %>
   
