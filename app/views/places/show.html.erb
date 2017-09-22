@@ -87,8 +87,8 @@
 <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
   Add a comment
 </button>
-  
-  </div>
+</div>
+
  <div class="clear"></div>
  
  <div class="row">
@@ -105,19 +105,23 @@
   <% end %>
   </div>
   
-  
-  <h1> Pictures </h1>
-  
- <% @place.photos.each do |p| %>
- <%= image_tag p.picture %>
- <%= p.caption %>
- <% end %>
-  
-
+  <div class= "col-10 offset-1">
+<h1 class = "float-left"> Photos </h1>
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg float-left" data-toggle="modal" data-target="#myPhotoModal">
+<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myPhotoModal">
   Add a picture
 </button>
+</div>
+<div class="clear"></div>
+<div class="booyah-box col-10 offset-1">
+    <% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture %>
+    <%= photo.caption %>
+    <% end %>
+</div>
+     
+  
+
 
 <!-- Modal -->
 <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
