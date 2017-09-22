@@ -1,15 +1,16 @@
 Rails.application.configure do
-  config.action_mailer.delivery_method = :smtp
+   config.action_mailer.delivery_method = :test
+  #config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['GMAIL_ADDRESS'],
-    password: ENV['GMAIL_PASSWORD']
-  }
+  # config.action_mailer.smtp_settings = {
+  #  address: "smtp.gmail.com",
+   # port: 587,
+   # domain: "example.com",
+   # authentication: "plain",
+   # enable_starttls_auto: true,
+    # user_name: ENV['GMAIL_ADDRESS'],
+    # password: ENV['GMAIL_PASSWORD']
+  # }
   
   config.action_mailer.default_url_options = { host: 'https://finaldev-lvsam.c9users.io/' }
   # Settings specified here will take precedence over those in config/application.rb.
@@ -60,6 +61,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+ 
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
