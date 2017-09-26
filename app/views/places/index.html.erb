@@ -36,7 +36,6 @@
 		<% if place.user.present? %>
 			<small><%= place.user.email %></small>
 		<% end %>
-	<%= paginate @places %>
 		
 		<%if place.comments.present? %>
 		<div class="col-12">
@@ -52,9 +51,9 @@
 		<% end %>    
 		<hr />
 
-	<!-- This closing div tag should be here, but it's not present in your code -->
+
 	</div>
 
 <%end%>
-	
+	<%= paginate @places %>
 
